@@ -1,1 +1,13 @@
+#include <dt-bindings/gpio/gpio.h>
 
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpios";
+
+        input-gpios = <&gpio0 2 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    };
+};
